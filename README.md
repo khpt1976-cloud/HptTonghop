@@ -1,6 +1,60 @@
-# HptTonghop - Dự Án Microservice Tổng Thể
+# DuAnTongThe - Microservice Project with Kong API Gateway
 
-Đây là dự án microservice được tổ chức theo kiến trúc phân tán, bao gồm các dịch vụ backend, ứng dụng frontend, và hạ tầng hỗ trợ.
+## Tổng quan
+
+Dự án này triển khai một hệ thống microservice với Kong API Gateway để quản lý và định tuyến các yêu cầu API. Hệ thống bao gồm:
+
+- **Shell Config Service**: Service chính cung cấp API cho cấu hình shell
+- **Kong API Gateway**: API Gateway để định tuyến và quản lý traffic
+- **PostgreSQL**: Database cho cả Shell Config Service và Kong
+- **Konga**: Web UI để quản lý Kong
+
+## Kiến trúc hệ thống
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────────┐
+│   Client        │───▶│  Kong Gateway    │───▶│ Shell Config Service│
+│                 │    │  (Port 8000)     │    │   (Port 8000)       │
+└─────────────────┘    └──────────────────┘    └─────────────────────┘
+                              │                           │
+                              ▼                           ▼
+                       ┌──────────────┐           ┌──────────────┐
+                       │  Kong DB     │           │ Service DB   │
+                       │ (PostgreSQL) │           │ (PostgreSQL) │
+                       └──────────────┘           └──────────────┘
+                              │
+                              ▼
+                       ┌──────────────┐
+                       │    Konga     │
+                       │  (Port 1337) │
+                       └──────────────┘
+```
+
+## Cấu hình Ports
+
+| Service | Internal Port | External Port | Description |
+|---------|---------------|---------------|-------------|
+| Kong Proxy | 8000 | 8000 | API Gateway endpoint |
+| Kong Admin | 8001 | 8002 | Kong Admin API |
+| Kong Admin SSL | 8444 | 8003 | Kong Admin API (SSL) |
+| Shell Config Service | 8000 | 8001 | Direct service access |
+| Konga | 1337 | 1337 | Kong management UI |
+| Service DB | 5432 | 5432 | PostgreSQL for service |
+| Kong DB | 5432 | - | PostgreSQL for Kong (internal) |
+
+## Kong API Gateway Configuration
+
+Kong đã được cấu hình với:
+- **Service**: `shell-config-service` pointing to `http://shell-config-service:8000`
+- **Routes**: 
+  - `/api/shell-config` - Route tổng quát cho tất cả endpoints
+  - `/api/navigation-items` - Route trực tiếp cho navigation items
+
+### API Endpoints qua Kong
+
+- **Health Check**: `GET http://localhost:8000/api/shell-config/health`
+- **Navigation Items**: `GET http://localhost:8000/api/navigation-items/`
+- **All Shell Config APIs**: `http://localhost:8000/api/shell-config/*`
 
 ## Cấu Trúc Dự Án
 

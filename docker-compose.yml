@@ -64,7 +64,7 @@ services:
 
   # Kong Migrations
   kong-migrations:
-    image: kong:3.4-alpine
+    image: kong:latest
     container_name: kong_migrations
     environment:
       KONG_DATABASE: postgres
@@ -83,7 +83,7 @@ services:
 
   # Kong API Gateway
   kong:
-    image: kong:3.4-alpine
+    image: kong:latest
     container_name: kong_gateway
     environment:
       KONG_DATABASE: postgres
