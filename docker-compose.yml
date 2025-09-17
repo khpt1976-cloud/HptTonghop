@@ -1,0 +1,249 @@
+version: '3.8'
+
+services:
+  # API Gateways
+  user-gateway:
+    build: ./api-gateway/user-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - user-service
+      - product-service
+      - cart-service
+
+  admin-gateway:
+    build: ./api-gateway/admin-gateway
+    ports:
+      - "8081:8081"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - admin-service
+      - user-service
+
+  # Core Services
+  user-service:
+    build: ./services/user-service
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=userdb
+    depends_on:
+      - postgres
+      - redis
+
+  product-service:
+    build: ./services/product-service
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=productdb
+    depends_on:
+      - postgres
+      - redis
+
+  cart-service:
+    build: ./services/cart-service
+    ports:
+      - "3003:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=cartdb
+    depends_on:
+      - postgres
+      - redis
+
+  news-service:
+    build: ./services/news-service
+    ports:
+      - "3004:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=newsdb
+    depends_on:
+      - postgres
+
+  design-calculation-service:
+    build: ./services/design-calculation-service
+    ports:
+      - "3005:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=designdb
+    depends_on:
+      - postgres
+
+  football-service:
+    build: ./services/football-service
+    ports:
+      - "3006:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=footballdb
+    depends_on:
+      - postgres
+
+  communication-log-service:
+    build: ./services/communication-log-service
+    ports:
+      - "3007:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=commlogdb
+    depends_on:
+      - postgres
+
+  chatbot-service:
+    build: ./services/chatbot-service
+    ports:
+      - "3008:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=chatbotdb
+    depends_on:
+      - postgres
+      - redis
+
+  payment-service:
+    build: ./services/payment-service
+    ports:
+      - "3009:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=paymentdb
+    depends_on:
+      - postgres
+
+  shell-config-service:
+    build: ./services/shell-config-service
+    ports:
+      - "3010:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=shellconfigdb
+    depends_on:
+      - postgres
+
+  admin-service:
+    build: ./services/admin-service
+    ports:
+      - "3011:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=admindb
+    depends_on:
+      - postgres
+
+  agent-management-service:
+    build: ./services/agent-management-service
+    ports:
+      - "3012:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=agentmgmtdb
+    depends_on:
+      - postgres
+
+  agent-policy-service:
+    build: ./services/agent-policy-service
+    ports:
+      - "3013:3000"
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=agentpolicydb
+    depends_on:
+      - postgres
+
+  # Frontend Applications
+  shell-app-user:
+    build: ./frontend/shell-app-user
+    ports:
+      - "4000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8080
+    depends_on:
+      - user-gateway
+
+  shell-app-admin:
+    build: ./frontend/shell-app-admin
+    ports:
+      - "4001:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8081
+    depends_on:
+      - admin-gateway
+
+  # Databases
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=microservices
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  # Monitoring
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./infrastructure/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  postgres_data:
+  redis_data:
+  grafana_data:
+
+networks:
+  default:
+    driver: bridge
