@@ -1,4 +1,4 @@
-# Dự Án Microservice Tổng Thể
+# HptTonghop - Dự Án Microservice Tổng Thể
 
 Đây là dự án microservice được tổ chức theo kiến trúc phân tán, bao gồm các dịch vụ backend, ứng dụng frontend, và hạ tầng hỗ trợ.
 
@@ -14,7 +14,7 @@
 - **chatbot-service**: Dịch vụ chatbot
 - **payment-service**: Dịch vụ thanh toán
 - **user-service**: Dịch vụ người dùng
-- **shell-config-service**: Dịch vụ cấu hình shell
+- **shell-config-service**: Dịch vụ cấu hình shell (✅ Đã hoàn thành)
 - **admin-service**: Dịch vụ quản trị hệ thống
 - **agent-management-service**: Dịch vụ quản lý đại lý
 - **agent-policy-service**: Dịch vụ chính sách đại lý
@@ -49,6 +49,16 @@
 - **deploy**: Script triển khai
 - **setup**: Script cài đặt môi trường
 
+## Tính Năng Đã Hoàn Thành
+
+### ✅ Shell Config Service
+- FastAPI backend với PostgreSQL
+- Hỗ trợ nested dropdown navigation không giới hạn cấp độ
+- API RESTful đầy đủ (CRUD operations)
+- Phân quyền theo role
+- Docker containerization
+- Tự động tạo database schema
+
 ## Bắt Đầu
 
 ### Yêu Cầu Hệ Thống
@@ -60,16 +70,16 @@
 ### Cài Đặt Môi Trường Phát Triển
 ```bash
 # Clone repository
-git clone <repository-url>
-cd DuAntongthe
+git clone https://github.com/khpt1976-cloud/HptTonghop.git
+cd HptTonghop
 
 # Chạy môi trường phát triển với Docker Compose
 docker-compose up -d
 
 # Hoặc chạy từng service riêng lẻ
-cd services/user-service
-npm install
-npm start
+cd services/shell-config-service
+pip install -r requirements.txt
+python -m uvicorn src.main:app --reload
 ```
 
 ### Triển Khai
