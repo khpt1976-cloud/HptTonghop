@@ -35,7 +35,7 @@ const App: React.FC = () => {
                 <MicroFrontendContainer 
                   name="shell-config-admin-frontend"
                   title="Configuration Management"
-                  url="http://localhost:3001"
+                  url="http://localhost:12009"
                 />
               } 
             />

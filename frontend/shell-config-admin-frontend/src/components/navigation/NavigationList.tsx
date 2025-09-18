@@ -243,7 +243,7 @@ const NavigationList: React.FC<NavigationListProps> = ({
         <div>
           {permissions && permissions.length > 0 ? (
             permissions.map((permission, index) => (
-              <Tag key={index} size="small">
+              <Tag key={index}>
                 {permission}
               </Tag>
             ))
@@ -295,7 +295,7 @@ const NavigationList: React.FC<NavigationListProps> = ({
         {getTypeIcon(node.type)}
         <span>{node.name}</span>
         <code className="bg-gray-100 px-1 rounded text-xs">{node.path}</code>
-        <Tag color={getTypeColor(node.type)} size="small">
+        <Tag color={getTypeColor(node.type)}>
           {t(`navigation.types.${node.type}`)}
         </Tag>
         {!node.isVisible && <EyeInvisibleOutlined className="text-gray-400" />}
@@ -418,8 +418,8 @@ const NavigationList: React.FC<NavigationListProps> = ({
               treeData={treeData}
               expandedKeys={expandedKeys}
               selectedKeys={selectedKeys}
-              onExpand={setExpandedKeys}
-              onSelect={setSelectedKeys}
+              onExpand={(keys) => setExpandedKeys(keys as string[])}
+              onSelect={(keys) => setSelectedKeys(keys as string[])}
               titleRender={renderTreeNode}
               showLine
               showIcon={false}

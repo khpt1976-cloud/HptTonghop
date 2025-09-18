@@ -21,7 +21,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'vi',
-    debug: process.env.NODE_ENV === 'development',
+    debug: (import.meta as any).env?.DEV || false,
 
     interpolation: {
       escapeValue: false, // React already does escaping

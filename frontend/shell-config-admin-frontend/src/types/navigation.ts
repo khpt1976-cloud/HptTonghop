@@ -2,6 +2,7 @@ export interface NavigationItem {
   id: string;
   name: string;
   path: string;
+  url?: string;
   icon?: string;
   order: number;
   isVisible: boolean;
@@ -42,6 +43,9 @@ export interface ApiResponse<T> {
 export interface NavigationListResponse {
   items: NavigationItem[];
   total: number;
+  page?: number;
+  pageSize?: number;
+  hasMore?: boolean;
 }
 
 export interface NavigationQueryParams {

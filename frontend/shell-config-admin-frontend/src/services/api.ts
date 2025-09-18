@@ -2,8 +2,8 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { message } from 'antd';
 
 // API Base Configuration
-const API_BASE_URL = process.env.VITE_API_BASE_URL || 'http://localhost:8000';
-const KONG_GATEWAY_URL = process.env.VITE_KONG_GATEWAY_URL || 'http://localhost:8000';
+// const API_BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:8000';
+const KONG_GATEWAY_URL = (import.meta as any).env?.VITE_KONG_GATEWAY_URL || 'http://localhost:8000';
 
 // Create axios instance
 const apiClient: AxiosInstance = axios.create({

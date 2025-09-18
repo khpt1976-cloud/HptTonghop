@@ -9,7 +9,12 @@ import NavigationManagement from './pages/navigation';
 import EmbeddedModeUtils from './utils/embeddedMode';
 import './i18n';
 
-const App: React.FC = () => {
+interface AppProps {
+  initialLanguage?: string;
+  onLanguageChange?: (lang: string) => void;
+}
+
+const App: React.FC<AppProps> = ({ initialLanguage, onLanguageChange }) => {
   const { i18n } = useTranslation();
 
   // Get Ant Design locale based on current language
@@ -25,12 +30,20 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
+    // Set initial language if provided
+    if (initialLanguage && i18n.language !== initialLanguage) {
+      i18n.changeLanguage(initialLanguage);
+    }
+  }, [initialLanguage, i18n]);
+
+  useEffect(() => {
     // Set up embedded mode listeners
     const cleanup = EmbeddedModeUtils.listenToParentMessages((type, data) => {
       switch (type) {
         case 'language-change':
           if (data.language && i18n.language !== data.language) {
             i18n.changeLanguage(data.language);
+            onLanguageChange?.(data.language);
           }
           break;
         case 'theme-change':

@@ -133,7 +133,7 @@ export const mockNavigationService = {
     if (data.permissions && Array.isArray(data.permissions)) {
       permissions = data.permissions;
     } else if (typeof data.permissions === 'string') {
-      permissions = data.permissions.split(',').map(p => p.trim()).filter(p => p);
+      permissions = (data.permissions as string).split(',').map((p: string) => p.trim()).filter((p: string) => p);
     }
 
     const newItem: NavigationItem = {
@@ -188,7 +188,7 @@ export const mockNavigationService = {
             if (Array.isArray(data.permissions)) {
               permissions = data.permissions;
             } else if (typeof data.permissions === 'string') {
-              permissions = data.permissions.split(',').map(p => p.trim()).filter(p => p);
+              permissions = (data.permissions as string).split(',').map((p: string) => p.trim()).filter((p: string) => p);
             }
           }
 
@@ -225,7 +225,7 @@ export const mockNavigationService = {
           parentArray.splice(i, 1);
           return true;
         }
-        if (items[i].children && deleteItem(items[i].children, items[i].children)) {
+        if (items[i].children && deleteItem(items[i].children!, items[i].children!)) {
           return true;
         }
       }

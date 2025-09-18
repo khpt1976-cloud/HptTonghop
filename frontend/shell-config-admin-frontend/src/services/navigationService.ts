@@ -4,7 +4,7 @@ import {
   NavigationFormData,
   NavigationListResponse,
   NavigationQueryParams,
-  ApiResponse,
+  // ApiResponse,
 } from '../types/navigation';
 
 const NAVIGATION_ENDPOINT = '/shell-config/navigation-items';

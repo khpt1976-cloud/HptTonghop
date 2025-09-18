@@ -8,20 +8,20 @@ import {
 } from '../types/navigation';
 
 // Check if we should use mock service (when backend is not available)
-const USE_MOCK_SERVICE = import.meta.env.VITE_USE_MOCK_API === 'true' || 
-                        import.meta.env.DEV; // Use mock in development by default
+const USE_MOCK_SERVICE = (import.meta as any).env?.VITE_USE_MOCK_API === 'true' || 
+                        (import.meta as any).env?.DEV; // Use mock in development by default
 
-// Adapter to convert between different data formats
-const adaptNavigationFormData = (data: NavigationFormData) => ({
-  name: data.name,
-  path: data.path,
-  icon: data.icon,
-  order: data.order,
-  isVisible: data.isVisible,
-  parentId: data.parentId,
-  type: data.type,
-  permissions: data.permissions,
-});
+// Adapter to convert between different data formats (commented out as unused)
+// const adaptNavigationFormData = (data: NavigationFormData) => ({
+//   name: data.name,
+//   path: data.path,
+//   icon: data.icon,
+//   order: data.order,
+//   isVisible: data.isVisible,
+//   parentId: data.parentId,
+//   type: data.type,
+//   permissions: data.permissions,
+// });
 
 export class NavigationServiceWrapper {
   /**

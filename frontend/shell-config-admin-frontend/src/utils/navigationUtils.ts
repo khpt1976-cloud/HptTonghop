@@ -201,7 +201,7 @@ export class NavigationUtils {
     }
     
     const term = searchTerm.toLowerCase();
-    const filtered: NavigationItem[] = [];
+    // const filtered: NavigationItem[] = [];
     
     const filterRecursive = (items: NavigationItem[]): NavigationItem[] => {
       const result: NavigationItem[] = [];

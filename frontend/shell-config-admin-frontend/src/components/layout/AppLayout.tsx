@@ -18,7 +18,7 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const { t } = useTranslation();
   const location = useLocation();
   const [embeddedConfig, setEmbeddedConfig] = useState<EmbeddedModeConfig>({});
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [_dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     // Get embedded mode configuration

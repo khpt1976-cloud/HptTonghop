@@ -23,7 +23,7 @@ import {
   MinusOutlined,
 } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { NavigationItem, NavigationFormData, NavigationType } from '../../types/navigation';
+import { NavigationItem, NavigationFormData } from '../../types/navigation';
 import { NavigationServiceWrapper as NavigationService } from '../../services/navigationServiceWrapper';
 import NavigationUtils from '../../utils/navigationUtils';
 
@@ -119,7 +119,7 @@ const NavigationForm: React.FC<NavigationFormProps> = ({
   };
 
   // Validate path uniqueness
-  const validatePath = async (rule: any, value: string) => {
+  const validatePath = async (_rule: any, value: string) => {
     if (!value || !value.trim()) {
       return Promise.resolve();
     }
@@ -139,7 +139,7 @@ const NavigationForm: React.FC<NavigationFormProps> = ({
   };
 
   // Validate parent selection
-  const validateParent = (rule: any, value: string) => {
+  const validateParent = (_rule: any, value: string) => {
     if (!value) {
       return Promise.resolve();
     }
@@ -151,21 +151,21 @@ const NavigationForm: React.FC<NavigationFormProps> = ({
     return Promise.resolve();
   };
 
-  // Get type icon
-  const getTypeIcon = (type: NavigationType) => {
-    switch (type) {
-      case 'menu':
-        return <MenuOutlined />;
-      case 'page':
-        return <FileOutlined />;
-      case 'link':
-        return <LinkOutlined />;
-      case 'divider':
-        return <MinusOutlined />;
-      default:
-        return <MenuOutlined />;
-    }
-  };
+  // Get type icon (commented out as unused)
+  // const getTypeIcon = (type: NavigationType) => {
+  //   switch (type) {
+  //     case 'menu':
+  //       return <MenuOutlined />;
+  //     case 'page':
+  //       return <FileOutlined />;
+  //     case 'link':
+  //       return <LinkOutlined />;
+  //     case 'divider':
+  //       return <MinusOutlined />;
+  //     default:
+  //       return <MenuOutlined />;
+  //   }
+  // };
 
   // Convert parent options to tree data
   const getParentTreeData = () => {
