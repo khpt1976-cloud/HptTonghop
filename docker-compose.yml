@@ -46,7 +46,7 @@ services:
 
   # PostgreSQL Database cho Kong API Gateway
   kong-database:
-    image: postgres:13-alpine
+    image: postgres:11-alpine
     container_name: kong_db
     environment:
       POSTGRES_DB: kong
