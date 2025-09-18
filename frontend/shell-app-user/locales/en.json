@@ -1,0 +1,50 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "refresh": "Refresh"
+  },
+  "header": {
+    "appName": "Management System",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "home": "Home",
+    "profile": "Profile"
+  },
+  "footer": {
+    "copyright": "© 2024 Management System. All rights reserved.",
+    "version": "Version"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "username": "Username",
+    "password": "Password",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed",
+    "logoutSuccess": "Logout successful"
+  },
+  "pages": {
+    "home": {
+      "title": "Home",
+      "welcome": "Welcome to the system"
+    },
+    "profile": {
+      "title": "Profile",
+      "personalInfo": "Personal Information"
+    }
+  }
+}

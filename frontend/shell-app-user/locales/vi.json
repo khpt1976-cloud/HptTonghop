@@ -1,0 +1,50 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "refresh": "Làm mới"
+  },
+  "header": {
+    "appName": "Hệ thống Quản lý",
+    "profile": "Hồ sơ",
+    "settings": "Cài đặt",
+    "logout": "Đăng xuất",
+    "language": "Ngôn ngữ"
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "home": "Trang chủ",
+    "profile": "Hồ sơ cá nhân"
+  },
+  "footer": {
+    "copyright": "© 2024 Hệ thống Quản lý. Tất cả quyền được bảo lưu.",
+    "version": "Phiên bản"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "loginSuccess": "Đăng nhập thành công",
+    "loginFailed": "Đăng nhập thất bại",
+    "logoutSuccess": "Đăng xuất thành công"
+  },
+  "pages": {
+    "home": {
+      "title": "Trang chủ",
+      "welcome": "Chào mừng đến với hệ thống"
+    },
+    "profile": {
+      "title": "Hồ sơ cá nhân",
+      "personalInfo": "Thông tin cá nhân"
+    }
+  }
+}
