@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "Shell App Admin",
+    "description": "Ứng dụng quản trị chính"
+  },
+  "header": {
+    "title": "Shell App Admin",
+    "user": {
+      "profile": "Hồ sơ",
+      "settings": "Cài đặt",
+      "logout": "Đăng xuất"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Bảng điều khiển",
+    "users": "Quản lý người dùng",
+    "settings": "Cài đặt hệ thống",
+    "config": "Cấu hình",
+    "reports": "Báo cáo",
+    "collapse": "Thu gọn",
+    "expand": "Mở rộng"
+  },
+  "footer": {
+    "copyright": "© 2024 Shell App Admin. Tất cả quyền được bảo lưu.",
+    "version": "Phiên bản"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Bảng điều khiển",
+      "welcome": "Chào mừng đến với Shell App Admin",
+      "description": "Đây là trang chính của ứng dụng quản trị"
+    },
+    "users": {
+      "title": "Quản lý người dùng",
+      "description": "Quản lý tài khoản người dùng"
+    },
+    "settings": {
+      "title": "Cài đặt hệ thống",
+      "description": "Cấu hình hệ thống"
+    }
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Có lỗi xảy ra",
+    "success": "Thành công",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "save": "Lưu",
+    "edit": "Chỉnh sửa",
+    "delete": "Xóa",
+    "add": "Thêm",
+    "search": "Tìm kiếm"
+  },
+  "language": {
+    "vietnamese": "Tiếng Việt",
+    "english": "English",
+    "switch": "Chuyển ngôn ngữ"
+  }
+}

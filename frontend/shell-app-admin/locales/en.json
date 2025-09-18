@@ -1,0 +1,59 @@
+{
+  "app": {
+    "title": "Shell App Admin",
+    "description": "Main administration application"
+  },
+  "header": {
+    "title": "Shell App Admin",
+    "user": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "users": "User Management",
+    "settings": "System Settings",
+    "config": "Configuration",
+    "reports": "Reports",
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "footer": {
+    "copyright": "© 2024 Shell App Admin. All rights reserved.",
+    "version": "Version"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Dashboard",
+      "welcome": "Welcome to Shell App Admin",
+      "description": "This is the main page of the administration application"
+    },
+    "users": {
+      "title": "User Management",
+      "description": "Manage user accounts"
+    },
+    "settings": {
+      "title": "System Settings",
+      "description": "System configuration"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "search": "Search"
+  },
+  "language": {
+    "vietnamese": "Tiếng Việt",
+    "english": "English",
+    "switch": "Switch Language"
+  }
+}
