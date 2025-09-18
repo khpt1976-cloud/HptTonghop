@@ -1,0 +1,78 @@
+{
+  "common": {
+    "add": "Thêm",
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "search": "Tìm kiếm",
+    "loading": "Đang tải...",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "warning": "Cảnh báo",
+    "info": "Thông tin",
+    "yes": "Có",
+    "no": "Không",
+    "actions": "Thao tác",
+    "status": "Trạng thái",
+    "active": "Hoạt động",
+    "inactive": "Không hoạt động",
+    "all": "Tất cả",
+    "table": "Bảng",
+    "tree": "Cây",
+    "refresh": "Làm mới",
+    "refreshed": "Đã làm mới"
+  },
+  "navigation": {
+    "title": "Quản lý Navigation",
+    "description": "Quản lý các mục điều hướng của hệ thống Shell Framework",
+    "list": "Danh sách Navigation",
+    "add": "Thêm Navigation",
+    "edit": "Sửa Navigation",
+    "delete": "Xóa Navigation",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa navigation này?",
+    "fields": {
+      "id": "ID",
+      "name": "Tên",
+      "path": "Đường dẫn",
+      "icon": "Icon",
+      "order": "Thứ tự",
+      "isVisible": "Hiển thị",
+      "parentId": "Navigation cha",
+      "type": "Loại",
+      "permissions": "Quyền"
+    },
+    "types": {
+      "menu": "Menu",
+      "page": "Trang",
+      "link": "Liên kết",
+      "divider": "Phân cách"
+    },
+    "validation": {
+      "nameRequired": "Tên không được để trống",
+      "nameTooLong": "Tên không được vượt quá 100 ký tự",
+      "pathRequired": "Đường dẫn không được để trống",
+      "pathInvalid": "Đường dẫn không hợp lệ (phải bắt đầu bằng /)",
+      "pathExists": "Đường dẫn này đã tồn tại",
+      "pathValidationError": "Lỗi khi kiểm tra đường dẫn",
+      "orderRequired": "Thứ tự không được để trống",
+      "orderInvalid": "Thứ tự phải là số nguyên dương",
+      "typeRequired": "Loại không được để trống",
+      "parentSelf": "Không thể chọn chính nó làm navigation cha"
+    },
+    "messages": {
+      "addSuccess": "Thêm navigation thành công",
+      "editSuccess": "Cập nhật navigation thành công",
+      "deleteSuccess": "Xóa navigation thành công",
+      "loadError": "Lỗi khi tải danh sách navigation",
+      "saveError": "Lỗi khi lưu navigation",
+      "deleteError": "Lỗi khi xóa navigation"
+    }
+  },
+  "layout": {
+    "language": "Ngôn ngữ",
+    "vietnamese": "Tiếng Việt",
+    "english": "English"
+  }
+}

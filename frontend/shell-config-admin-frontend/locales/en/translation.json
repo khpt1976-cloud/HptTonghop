@@ -1,0 +1,78 @@
+{
+  "common": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "search": "Search",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Information",
+    "yes": "Yes",
+    "no": "No",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "all": "All",
+    "table": "Table",
+    "tree": "Tree",
+    "refresh": "Refresh",
+    "refreshed": "Refreshed"
+  },
+  "navigation": {
+    "title": "Navigation Management",
+    "description": "Manage navigation items of the Shell Framework system",
+    "list": "Navigation List",
+    "add": "Add Navigation",
+    "edit": "Edit Navigation",
+    "delete": "Delete Navigation",
+    "deleteConfirm": "Are you sure you want to delete this navigation?",
+    "fields": {
+      "id": "ID",
+      "name": "Name",
+      "path": "Path",
+      "icon": "Icon",
+      "order": "Order",
+      "isVisible": "Visible",
+      "parentId": "Parent Navigation",
+      "type": "Type",
+      "permissions": "Permissions"
+    },
+    "types": {
+      "menu": "Menu",
+      "page": "Page",
+      "link": "Link",
+      "divider": "Divider"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameTooLong": "Name cannot exceed 100 characters",
+      "pathRequired": "Path is required",
+      "pathInvalid": "Invalid path format (must start with /)",
+      "pathExists": "This path already exists",
+      "pathValidationError": "Error validating path",
+      "orderRequired": "Order is required",
+      "orderInvalid": "Order must be a positive integer",
+      "typeRequired": "Type is required",
+      "parentSelf": "Cannot select itself as parent navigation"
+    },
+    "messages": {
+      "addSuccess": "Navigation added successfully",
+      "editSuccess": "Navigation updated successfully",
+      "deleteSuccess": "Navigation deleted successfully",
+      "loadError": "Error loading navigation list",
+      "saveError": "Error saving navigation",
+      "deleteError": "Error deleting navigation"
+    }
+  },
+  "layout": {
+    "language": "Language",
+    "vietnamese": "Tiếng Việt",
+    "english": "English"
+  }
+}
