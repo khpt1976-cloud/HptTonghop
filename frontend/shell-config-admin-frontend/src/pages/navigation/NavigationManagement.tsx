@@ -21,7 +21,7 @@ import NavigationList from '../../components/navigation/NavigationList';
 import NavigationForm from '../../components/navigation/NavigationForm';
 import { NavigationItem, NavigationFormData } from '../../types/navigation';
 import { LoadingState } from '../../types/common';
-import NavigationService from '../../services/navigationService';
+import { NavigationServiceWrapper as NavigationService } from '../../services/navigationServiceWrapper';
 import EmbeddedModeUtils from '../../utils/embeddedMode';
 
 const { Title } = Typography;

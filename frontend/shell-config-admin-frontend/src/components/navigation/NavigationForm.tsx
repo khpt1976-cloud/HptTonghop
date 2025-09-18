@@ -24,7 +24,7 @@ import {
 } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { NavigationItem, NavigationFormData, NavigationType } from '../../types/navigation';
-import NavigationService from '../../services/navigationService';
+import { NavigationServiceWrapper as NavigationService } from '../../services/navigationServiceWrapper';
 import NavigationUtils from '../../utils/navigationUtils';
 
 const { Option } = Select;

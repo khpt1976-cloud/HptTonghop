@@ -11,11 +11,11 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3001,
+    port: 12000,
     host: '0.0.0.0',
     cors: true,
     strictPort: false,
-    allowedHosts: ['work-1-qizxbileddtqkyxg.prod-runtime.all-hands.dev', 'localhost', '127.0.0.1'],
+    allowedHosts: ['work-1-shufnexouykglknp.prod-runtime.all-hands.dev', 'localhost', '127.0.0.1'],
     hmr: {
       clientPort: 12000,
     },
